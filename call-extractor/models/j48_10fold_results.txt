@@ -1,0 +1,494 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.J48 -C 0.25 -M 2
+Relation:     training_dataset_500_three_projects
+Instances:    500
+Attributes:   86
+              ReturnType
+              IsVoidCall
+              CallerLayer
+              CalleeLayer
+              LayerRelation
+              ArgCount
+              HasLiteralArg
+              HasNullArg
+              HasBooleanArg
+              HasNestedInvocationArg
+              AssignedToVariable
+              ReturnedDirectly
+              PassedAsArgument
+              InIfCondition
+              InsideIfBody
+              InsideLoop
+              ReceiverCategory
+              ReceiverOrigin
+              MethodName
+              NamePattern
+              NameStartsWithGet
+              NameStartsWithFind
+              NameStartsWithSave
+              NameStartsWithDelete
+              NameStartsWithUpdate
+              NameContainsValidate
+              NameContainsCheck
+              BooleanLikeCall
+              ArgumentTypePattern
+              CallerMethodFanOut
+              CallerClassFanOut
+              CalleeMethodFanIn
+              GuardedByIf
+              GuardedByNullCheck
+              GuardedByBooleanCheck
+              GuardedByInstanceofCheck
+              PrecededByGuardClause
+              ReceiverIsProjectType
+              ReceiverIsExternalType
+              ReceiverIsFieldDependency
+              NameStartsWithNotify
+              NameStartsWithPublish
+              NameStartsWithEmit
+              NameStartsWithDispatch
+              NameStartsWithFire
+              NameStartsWithSend
+              ReceiverLooksLikeObserverPublisher
+              ReceiverLooksLikeEventBus
+              ReceiverLooksLikeListenerRegistry
+              AnyArgumentLooksLikeEvent
+              AnyArgumentLooksLikeMessage
+              FollowsStateMutationNearby
+              CrossLayerCall
+              CallsDependencyField
+              InsideDelegationChain
+              HasChainedOrNestedDelegation
+              ReturnsBoolean
+              ReturnsCollection
+              ReturnsOptional
+              ReturnsProjectType
+              ReturnsExternalType
+              MethodLooksAccessor
+              MethodLooksMutator
+              CallerLooksControllerMethod
+              CalleeLooksQueryMethod
+              CalleeLooksCommandMethod
+              CalleeLooksValidatorMethod
+              PreviousStatementContainsMutation
+              InvocationResultUsedInComparison
+              InvocationResultUsedInNullCheck
+              InvocationFeedsAnotherCall
+              IsFactoryLikeCall
+              ReturnsNewProjectType
+              MethodNameStartsWithCreate
+              MethodNameStartsWithBuild
+              MethodNameStartsWithOf
+              MethodNameStartsWithFrom
+              ReceiverLooksLikeFactory
+              ResultUsageKind
+              CalleeNameAction
+              ComputeTransformNameHint
+              CalleeBodySummary
+              CalleeAnnotations
+              ReceiverFieldInjectedDependency
+              IsLoggingCall
+              ManualLabel
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+J48 pruned tree
+------------------
+
+IsFactoryLikeCall = false
+|   NameStartsWithGet = false
+|   |   CalleeNameAction = ACCESSOR: Query/Retrieve (3.0/1.0)
+|   |   CalleeNameAction = CONVERSION: Compute/Transform (12.0)
+|   |   CalleeNameAction = CREATION: Creational (12.0)
+|   |   CalleeNameAction = DELETION: Command/Mutate (3.0)
+|   |   CalleeNameAction = DISPATCHER: Control/Orchestrate (4.0/1.0)
+|   |   CalleeNameAction = EXISTENCE_CHECK: Validate/Guard (37.0/1.0)
+|   |   CalleeNameAction = FINDER
+|   |   |   BooleanLikeCall = false
+|   |   |   |   ReceiverIsProjectType = false: Command/Mutate (5.0/1.0)
+|   |   |   |   ReceiverIsProjectType = true: Query/Retrieve (14.0)
+|   |   |   BooleanLikeCall = true: Validate/Guard (2.0)
+|   |   CalleeNameAction = LOGGER: Unknown/Mixed (7.0)
+|   |   CalleeNameAction = MUTATOR
+|   |   |   InvocationFeedsAnotherCall = false: Command/Mutate (59.0/1.0)
+|   |   |   InvocationFeedsAnotherCall = true
+|   |   |   |   AnyArgumentLooksLikeMessage = false: Command/Mutate (3.0)
+|   |   |   |   AnyArgumentLooksLikeMessage = true: Compute/Transform (2.0)
+|   |   CalleeNameAction = NOTIFICATION: Notify/Publish (23.0)
+|   |   CalleeNameAction = OTHER
+|   |   |   ReturnsExternalType = false
+|   |   |   |   ArgCount <= 0
+|   |   |   |   |   CalleeLayer = controller: Validate/Guard (0.0)
+|   |   |   |   |   CalleeLayer = domain: Validate/Guard (0.0)
+|   |   |   |   |   CalleeLayer = external: Compute/Transform (2.0)
+|   |   |   |   |   CalleeLayer = other: Command/Mutate (1.0)
+|   |   |   |   |   CalleeLayer = unknown: Validate/Guard (6.0)
+|   |   |   |   ArgCount > 0
+|   |   |   |   |   MethodName = accept: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = add: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = addAll: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = addHandler: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = addInternalAttachment: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = addKey: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = addObserver: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = addPoints: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = andExpect: Validate/Guard (13.0)
+|   |   |   |   |   MethodName = any: Control/Orchestrate (1.0)
+|   |   |   |   |   MethodName = assertEquals: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = assertSame: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = assertThat: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = assertTrue: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = build: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = buildCidToAttachmentUriMap: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = buildMessageOnActivityResult: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = changeUid: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = collect: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = collide: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = containsKey: Validate/Guard (1.0)
+|   |   |   |   |   MethodName = convert: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = create: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = createAnimatedSprite: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = createAttachment: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = createAttachmentList: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = createBoard: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = createClyde: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = createEmptyPart: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = createGround: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = createLevel: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = createMessageWithNullUid: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = createMessageWithUid: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = createMimeMultipart: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = createPacMan: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = createPellet: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = createTextMessage: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = createTextPart: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = createValidator: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = dismissWaitingForAttachmentDialog: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = dispatchOnPreDraw: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = draw: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = endsWith: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = eq: Control/Orchestrate (1.0)
+|   |   |   |   |   MethodName = equals: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = error: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = exchange: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = exists: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = filter: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = find: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = findAll: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = findById: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = findByLastNameStartingWith: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = findMultipartSignedParts: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = findNearest: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = findPaginatedForOwnersLastName: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = findPetTypes: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = findViewById: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = findViewablesAndAttachments: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = forEach: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = format: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = fromPreviewType: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = fromString: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = george: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = get: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = getAbsolutePath: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = getAccount: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = getApplicationContext: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = getAttachments: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = getBoard: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = getBoardFactory: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = getBody: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = getCache: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = getContent: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = getContext: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = getCount: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = getDirection: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = getDisplayCount: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = getDisplayedChildId: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = getFileName: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = getFirstName: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = getFolderServerId: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = getGame: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = getGhostFactory: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = getGhostSprite: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = getHeight: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = getHost: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = getHtml: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = getId: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = getInstance: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = getInt: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = getInterval: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = getKeyCode: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = getLastName: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = getLevel: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = getLevelFactory: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = getListeners: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = getLocalGraphicsEnvironment: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = getMapParser: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = getMessage: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = getMessageStore: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = getName: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = getOccupants: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = getPet: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = getPets: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = getPlayers: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = getQueryParameters: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = getRandomDirection: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = getRecipients: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = getResourceAsStream: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = getScore: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = getSize: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = getSprites: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = getSquare: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = getSquareAt: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = getStorageManager: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = getString: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = getTotalElements: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = getValue: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = getVersion: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = getWidth: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = greaterThan: Validate/Guard (1.0)
+|   |   |   |   |   MethodName = hasErrors: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = hasSquare: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = info: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = isASCII: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = isAfter: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = isAlive: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = isEmpty: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = isEncryptionEnabled: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = isEqualTo: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = isHideUserAgent: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = isInProgress: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = isInstance: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = isMessageHidden: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = isNotNull: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = isOk: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = isSet: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = isShowContactPicture: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = isSupportedEmailAddress: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = isTrue: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = launch: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = load: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = loadClassFromFile: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = log: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = makeGame: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = makeGrid: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = matcher: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = mkdirs: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = mock: Control/Orchestrate (17.0)
+|   |   |   |   |   MethodName = model: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = move: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = moveToNext: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = newArrayList: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = newBufferedReader: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = newInstance: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = newSingleThreadScheduledExecutor: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = notifyObservers: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = notifyObserversLevelLost: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = notifyObserversLevelRespawn: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = notifyObserversLevelWon: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = now: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = nullable: Validate/Guard (2.0)
+|   |   |   |   |   MethodName = occupy: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = of: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = ofNullable: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = onAccountSelected: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = onAttachmentAdded: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = onViewButtonClick: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = open: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = pacmanMoved: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = parse: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = parseAllAutocryptGossipHeaders: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = parseInt: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = parseMap: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = pelletColliding: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = perform: Control/Orchestrate (11.0)
+|   |   |   |   |   MethodName = performSaveAfterChecks: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = post: Control/Orchestrate (9.0)
+|   |   |   |   |   MethodName = put: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = putBackground: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = putNull: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = read: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = readAllLines: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = readAllValues: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = registerPlayer: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = registerType: Control/Orchestrate (2.0)
+|   |   |   |   |   MethodName = remove: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = removeFlagFromCache: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = render: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = rootUri: Control/Orchestrate (1.0)
+|   |   |   |   |   MethodName = run: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = sendEmptyMessage: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = sendMessage: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = setAlive: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = setAnimating: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = setBirthDate: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = setColor: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = setCryptoStatus: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = setDescription: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = setDisplayedChild: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = setEmail: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = setFirstName: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = setFlagInternal: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = setHeader: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = setId: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = setIdentity: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = setLastName: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = setMessageFormat: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = setName: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = setNegativeButton: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = setOnLongClickListener: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = setResult: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = setSignature: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = setTelephone: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = setType: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = setVisibility: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = setupNicknameContactProvider: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = shortestPath: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = size: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = start: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = status: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = stop: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = stream: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = substring: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = synchronizeMailboxFailed: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = thenReturn: Control/Orchestrate (8.0)
+|   |   |   |   |   MethodName = toList: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = toString: Compute/Transform (1.0)
+|   |   |   |   |   MethodName = trim: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = update: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = verify: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = verifyNoMoreInteractions: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = view: Control/Orchestrate (0.0)
+|   |   |   |   |   MethodName = when: Control/Orchestrate (8.0)
+|   |   |   |   |   MethodName = writeTo: Control/Orchestrate (0.0)
+|   |   |   ReturnsExternalType = true
+|   |   |   |   ReturnType = android.app.Dialog: Compute/Transform (0.0)
+|   |   |   |   ReturnType = android.content.Context: Compute/Transform (0.0)
+|   |   |   |   ReturnType = android.net.Uri: Compute/Transform (0.0)
+|   |   |   |   ReturnType = boolean: Validate/Guard (4.0)
+|   |   |   |   ReturnType = com.fsck.k9.Account: Compute/Transform (0.0)
+|   |   |   |   ReturnType = com.fsck.k9.activity.misc.Attachment: Compute/Transform (0.0)
+|   |   |   |   ReturnType = com.fsck.k9.autocrypt.AutocryptGossipHeaderParser: Compute/Transform (0.0)
+|   |   |   |   ReturnType = com.fsck.k9.controller.MessagingControllerCommands$PendingEmptyTrash: Compute/Transform (0.0)
+|   |   |   |   ReturnType = com.fsck.k9.mail.Body: Compute/Transform (0.0)
+|   |   |   |   ReturnType = com.fsck.k9.mail.Message: Compute/Transform (0.0)
+|   |   |   |   ReturnType = com.fsck.k9.mail.Multipart: Compute/Transform (0.0)
+|   |   |   |   ReturnType = com.fsck.k9.mail.internet.MimeMultipart: Compute/Transform (0.0)
+|   |   |   |   ReturnType = com.fsck.k9.mailstore.DatabasePreviewType: Compute/Transform (0.0)
+|   |   |   |   ReturnType = com.fsck.k9.mailstore.LocalMessage: Compute/Transform (0.0)
+|   |   |   |   ReturnType = com.fsck.k9.mailstore.MessageCryptoAnnotations: Compute/Transform (0.0)
+|   |   |   |   ReturnType = com.fsck.k9.mailstore.MessageListCache: Compute/Transform (0.0)
+|   |   |   |   ReturnType = com.fsck.k9.mailstore.MessageStore: Compute/Transform (0.0)
+|   |   |   |   ReturnType = com.fsck.k9.mailstore.StorageManager: Compute/Transform (0.0)
+|   |   |   |   ReturnType = com.fsck.k9.message.BodyPart: Compute/Transform (0.0)
+|   |   |   |   ReturnType = com.fsck.k9.message.extractors.PreviewResult: Compute/Transform (0.0)
+|   |   |   |   ReturnType = int: Query/Retrieve (4.0)
+|   |   |   |   ReturnType = jakarta.validation.Validator: Compute/Transform (0.0)
+|   |   |   |   ReturnType = java.awt.Dimension: Compute/Transform (0.0)
+|   |   |   |   ReturnType = java.awt.GraphicsEnvironment: Compute/Transform (0.0)
+|   |   |   |   ReturnType = java.awt.image.BufferedImage: Compute/Transform (0.0)
+|   |   |   |   ReturnType = java.io.BufferedReader: Compute/Transform (0.0)
+|   |   |   |   ReturnType = java.io.InputStream: Compute/Transform (0.0)
+|   |   |   |   ReturnType = java.lang.Class: Compute/Transform (0.0)
+|   |   |   |   ReturnType = java.lang.Integer: Compute/Transform (0.0)
+|   |   |   |   ReturnType = java.lang.Object: Compute/Transform (0.0)
+|   |   |   |   ReturnType = java.lang.String: Compute/Transform (15.0)
+|   |   |   |   ReturnType = java.nio.file.Path: Compute/Transform (0.0)
+|   |   |   |   ReturnType = java.time.LocalDate: Query/Retrieve (1.0)
+|   |   |   |   ReturnType = java.util.ArrayList: Compute/Transform (0.0)
+|   |   |   |   ReturnType = java.util.Collection: Compute/Transform (0.0)
+|   |   |   |   ReturnType = java.util.List: Compute/Transform (7.0)
+|   |   |   |   ReturnType = java.util.Map: Compute/Transform (0.0)
+|   |   |   |   ReturnType = java.util.Optional: Compute/Transform (0.0)
+|   |   |   |   ReturnType = java.util.Set: Compute/Transform (0.0)
+|   |   |   |   ReturnType = java.util.concurrent.ScheduledExecutorService: Compute/Transform (0.0)
+|   |   |   |   ReturnType = java.util.regex.Matcher: Compute/Transform (2.0)
+|   |   |   |   ReturnType = java.util.stream.Collector: Compute/Transform (1.0)
+|   |   |   |   ReturnType = java.util.stream.Stream: Compute/Transform (3.0)
+|   |   |   |   ReturnType = long: Compute/Transform (0.0)
+|   |   |   |   ReturnType = nl.tudelft.jpacman.board.Board: Compute/Transform (0.0)
+|   |   |   |   ReturnType = nl.tudelft.jpacman.board.BoardFactory: Compute/Transform (0.0)
+|   |   |   |   ReturnType = nl.tudelft.jpacman.board.Direction: Compute/Transform (0.0)
+|   |   |   |   ReturnType = nl.tudelft.jpacman.board.Square: Compute/Transform (0.0)
+|   |   |   |   ReturnType = nl.tudelft.jpacman.board.Unit: Compute/Transform (0.0)
+|   |   |   |   ReturnType = nl.tudelft.jpacman.game.Game: Compute/Transform (0.0)
+|   |   |   |   ReturnType = nl.tudelft.jpacman.level.Level: Compute/Transform (0.0)
+|   |   |   |   ReturnType = nl.tudelft.jpacman.level.LevelFactory: Compute/Transform (0.0)
+|   |   |   |   ReturnType = nl.tudelft.jpacman.level.MapParser: Compute/Transform (0.0)
+|   |   |   |   ReturnType = nl.tudelft.jpacman.level.Pellet: Compute/Transform (0.0)
+|   |   |   |   ReturnType = nl.tudelft.jpacman.level.Player: Compute/Transform (0.0)
+|   |   |   |   ReturnType = nl.tudelft.jpacman.npc.Ghost: Compute/Transform (0.0)
+|   |   |   |   ReturnType = nl.tudelft.jpacman.npc.ghost.GhostFactory: Compute/Transform (0.0)
+|   |   |   |   ReturnType = nl.tudelft.jpacman.sprite.AnimatedSprite: Compute/Transform (0.0)
+|   |   |   |   ReturnType = nl.tudelft.jpacman.sprite.PacManSprites: Compute/Transform (0.0)
+|   |   |   |   ReturnType = nl.tudelft.jpacman.ui.Action: Compute/Transform (0.0)
+|   |   |   |   ReturnType = nl.tudelft.jpacman.ui.PacManUI: Compute/Transform (0.0)
+|   |   |   |   ReturnType = nl.tudelft.jpacman.ui.PacManUiBuilder: Compute/Transform (0.0)
+|   |   |   |   ReturnType = org.apache.james.mime4j.stream.MimeConfig: Compute/Transform (0.0)
+|   |   |   |   ReturnType = org.springframework.data.domain.Page: Compute/Transform (0.0)
+|   |   |   |   ReturnType = org.springframework.data.domain.Pageable: Compute/Transform (0.0)
+|   |   |   |   ReturnType = org.springframework.http.ResponseEntity: Control/Orchestrate (4.0)
+|   |   |   |   ReturnType = org.springframework.samples.petclinic.owner.Owner: Compute/Transform (0.0)
+|   |   |   |   ReturnType = org.springframework.samples.petclinic.owner.Pet: Compute/Transform (0.0)
+|   |   |   |   ReturnType = org.springframework.web.client.RestTemplate: Compute/Transform (0.0)
+|   |   |   |   ReturnType = void: Command/Mutate (26.0/1.0)
+|   |   CalleeNameAction = VALIDATOR: Validate/Guard (29.0)
+|   NameStartsWithGet = true
+|   |   HasLiteralArg = false: Query/Retrieve (80.0/2.0)
+|   |   HasLiteralArg = true
+|   |   |   IsVoidCall = false: Query/Retrieve (4.0)
+|   |   |   IsVoidCall = true: Control/Orchestrate (5.0)
+IsFactoryLikeCall = true
+|   MethodNameStartsWithBuild = false: Creational (33.0)
+|   MethodNameStartsWithBuild = true
+|   |   CalleeLayer = controller: Compute/Transform (0.0)
+|   |   CalleeLayer = domain: Compute/Transform (0.0)
+|   |   CalleeLayer = external: Compute/Transform (0.0)
+|   |   CalleeLayer = other: Creational (3.0)
+|   |   CalleeLayer = unknown: Compute/Transform (8.0/2.0)
+
+Number of Leaves  : 	335
+
+Size of the tree : 	351
+
+
+Time taken to build model: 0.01 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances         458               91.6    %
+Incorrectly Classified Instances        42                8.4    %
+Kappa statistic                          0.8998
+Mean absolute error                      0.0258
+Root mean squared error                  0.133 
+Relative absolute error                 12.2498 %
+Root relative squared error             41.0218 %
+Total Number of Instances              500     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.943    0.025    0.908      0.943    0.925      0.905    0.976     0.914     Query/Retrieve
+                 0.926    0.025    0.898      0.926    0.912      0.891    0.962     0.845     Command/Mutate
+                 0.929    0.009    0.942      0.929    0.935      0.925    0.996     0.970     Control/Orchestrate
+                 0.755    0.025    0.784      0.755    0.769      0.743    0.921     0.806     Compute/Transform
+                 0.947    0.010    0.957      0.947    0.952      0.941    0.984     0.950     Validate/Guard
+                 0.880    0.000    1.000      0.880    0.936      0.935    0.954     0.900     Notify/Publish
+                 0.960    0.007    0.941      0.960    0.950      0.945    0.999     0.986     Creational
+                 0.857    0.000    1.000      0.857    0.923      0.925    0.997     0.905     Unknown/Mixed
+Weighted Avg.    0.916    0.016    0.916      0.916    0.916      0.901    0.973     0.910     
+
+=== Confusion Matrix ===
+
+  a  b  c  d  e  f  g  h   <-- classified as
+ 99  1  0  4  1  0  0  0 |  a = Query/Retrieve
+  3 88  0  2  2  0  0  0 |  b = Command/Mutate
+  2  0 65  3  0  0  0  0 |  c = Control/Orchestrate
+  5  3  1 40  1  0  3  0 |  d = Compute/Transform
+  0  3  2  0 90  0  0  0 |  e = Validate/Guard
+  0  2  1  0  0 22  0  0 |  f = Notify/Publish
+  0  0  0  2  0  0 48  0 |  g = Creational
+  0  1  0  0  0  0  0  6 |  h = Unknown/Mixed
+

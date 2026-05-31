@@ -1,0 +1,164 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.rules.JRip -F 3 -N 2.0 -O 2 -S 1
+Relation:     training_dataset_500_three_projects
+Instances:    500
+Attributes:   86
+              ReturnType
+              IsVoidCall
+              CallerLayer
+              CalleeLayer
+              LayerRelation
+              ArgCount
+              HasLiteralArg
+              HasNullArg
+              HasBooleanArg
+              HasNestedInvocationArg
+              AssignedToVariable
+              ReturnedDirectly
+              PassedAsArgument
+              InIfCondition
+              InsideIfBody
+              InsideLoop
+              ReceiverCategory
+              ReceiverOrigin
+              MethodName
+              NamePattern
+              NameStartsWithGet
+              NameStartsWithFind
+              NameStartsWithSave
+              NameStartsWithDelete
+              NameStartsWithUpdate
+              NameContainsValidate
+              NameContainsCheck
+              BooleanLikeCall
+              ArgumentTypePattern
+              CallerMethodFanOut
+              CallerClassFanOut
+              CalleeMethodFanIn
+              GuardedByIf
+              GuardedByNullCheck
+              GuardedByBooleanCheck
+              GuardedByInstanceofCheck
+              PrecededByGuardClause
+              ReceiverIsProjectType
+              ReceiverIsExternalType
+              ReceiverIsFieldDependency
+              NameStartsWithNotify
+              NameStartsWithPublish
+              NameStartsWithEmit
+              NameStartsWithDispatch
+              NameStartsWithFire
+              NameStartsWithSend
+              ReceiverLooksLikeObserverPublisher
+              ReceiverLooksLikeEventBus
+              ReceiverLooksLikeListenerRegistry
+              AnyArgumentLooksLikeEvent
+              AnyArgumentLooksLikeMessage
+              FollowsStateMutationNearby
+              CrossLayerCall
+              CallsDependencyField
+              InsideDelegationChain
+              HasChainedOrNestedDelegation
+              ReturnsBoolean
+              ReturnsCollection
+              ReturnsOptional
+              ReturnsProjectType
+              ReturnsExternalType
+              MethodLooksAccessor
+              MethodLooksMutator
+              CallerLooksControllerMethod
+              CalleeLooksQueryMethod
+              CalleeLooksCommandMethod
+              CalleeLooksValidatorMethod
+              PreviousStatementContainsMutation
+              InvocationResultUsedInComparison
+              InvocationResultUsedInNullCheck
+              InvocationFeedsAnotherCall
+              IsFactoryLikeCall
+              ReturnsNewProjectType
+              MethodNameStartsWithCreate
+              MethodNameStartsWithBuild
+              MethodNameStartsWithOf
+              MethodNameStartsWithFrom
+              ReceiverLooksLikeFactory
+              ResultUsageKind
+              CalleeNameAction
+              ComputeTransformNameHint
+              CalleeBodySummary
+              CalleeAnnotations
+              ReceiverFieldInjectedDependency
+              IsLoggingCall
+              ManualLabel
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+JRIP rules:
+===========
+
+(CalleeNameAction = LOGGER) => ManualLabel=Unknown/Mixed (7.0/0.0)
+(CalleeNameAction = NOTIFICATION) => ManualLabel=Notify/Publish (23.0/0.0)
+(CalleeNameAction = CREATION) => ManualLabel=Creational (56.0/6.0)
+(CalleeNameAction = CONVERSION) => ManualLabel=Compute/Transform (12.0/0.0)
+(MethodName = toString) => ManualLabel=Compute/Transform (14.0/0.0)
+(ReturnType = java.util.List) and (MethodLooksAccessor = false) => ManualLabel=Compute/Transform (8.0/0.0)
+(ReturnType = java.util.regex.Matcher) => ManualLabel=Compute/Transform (2.0/0.0)
+(ReturnType = java.util.stream.Stream) => ManualLabel=Compute/Transform (3.0/0.0)
+(CalleeNameAction = OTHER) and (ReturnsExternalType = false) and (CalleeLayer = external) => ManualLabel=Control/Orchestrate (44.0/4.0)
+(LayerRelation = other->unknown) and (HasLiteralArg = true) => ManualLabel=Control/Orchestrate (18.0/3.0)
+(CalleeNameAction = OTHER) and (ArgumentTypePattern = VARIABLE) and (ResultUsageKind = CHAINED) => ManualLabel=Control/Orchestrate (8.0/1.0)
+(MethodName = run) => ManualLabel=Control/Orchestrate (3.0/0.0)
+(ReturnType = org.springframework.http.ResponseEntity) => ManualLabel=Control/Orchestrate (4.0/0.0)
+(CalleeLooksValidatorMethod = true) => ManualLabel=Validate/Guard (45.0/0.0)
+(ReceiverCategory = chained_call) and (BooleanLikeCall = true) => ManualLabel=Validate/Guard (16.0/0.0)
+(LayerRelation = other->unknown) and (CalleeNameAction = OTHER) => ManualLabel=Validate/Guard (20.0/0.0)
+(BooleanLikeCall = true) and (CallerMethodFanOut >= 4) => ManualLabel=Validate/Guard (10.0/1.0)
+(ResultUsageKind = IGNORED) and (CalleeNameAction = MUTATOR) => ManualLabel=Command/Mutate (54.0/0.0)
+(CalleeLooksCommandMethod = true) => ManualLabel=Command/Mutate (33.0/4.0)
+(CalleeBodySummary = CALLS_MUTATOR|RETURNS_VALUE) => ManualLabel=Command/Mutate (4.0/0.0)
+(NamePattern = command) => ManualLabel=Command/Mutate (4.0/0.0)
+ => ManualLabel=Query/Retrieve (112.0/8.0)
+
+Number of Rules : 22
+
+
+Time taken to build model: 0.1 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances         447               89.4    %
+Incorrectly Classified Instances        53               10.6    %
+Kappa statistic                          0.8735
+Mean absolute error                      0.0353
+Root mean squared error                  0.1565
+Relative absolute error                 16.7946 %
+Root relative squared error             48.2805 %
+Total Number of Instances              500     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.924    0.046    0.843      0.924    0.882      0.850    0.958     0.850     Query/Retrieve
+                 0.926    0.017    0.926      0.926    0.926      0.909    0.977     0.939     Command/Mutate
+                 0.886    0.023    0.861      0.886    0.873      0.852    0.962     0.835     Control/Orchestrate
+                 0.642    0.011    0.872      0.642    0.739      0.724    0.904     0.703     Compute/Transform
+                 0.905    0.017    0.925      0.905    0.915      0.895    0.964     0.901     Validate/Guard
+                 0.920    0.000    1.000      0.920    0.958      0.957    0.948     0.924     Notify/Publish
+                 1.000    0.013    0.893      1.000    0.943      0.939    0.994     0.929     Creational
+                 1.000    0.000    1.000      1.000    1.000      1.000    1.000     1.000     Unknown/Mixed
+Weighted Avg.    0.894    0.022    0.895      0.894    0.892      0.873    0.961     0.872     
+
+=== Confusion Matrix ===
+
+  a  b  c  d  e  f  g  h   <-- classified as
+ 97  3  2  2  1  0  0  0 |  a = Query/Retrieve
+  2 88  2  0  3  0  0  0 |  b = Command/Mutate
+  6  0 62  1  1  0  0  0 |  c = Control/Orchestrate
+  9  2  1 34  1  0  6  0 |  d = Compute/Transform
+  1  1  5  2 86  0  0  0 |  e = Validate/Guard
+  0  1  0  0  1 23  0  0 |  f = Notify/Publish
+  0  0  0  0  0  0 50  0 |  g = Creational
+  0  0  0  0  0  0  0  7 |  h = Unknown/Mixed
+

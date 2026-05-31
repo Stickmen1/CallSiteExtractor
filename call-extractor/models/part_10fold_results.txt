@@ -1,0 +1,241 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.rules.PART -C 0.25 -M 2
+Relation:     training_dataset_500_three_projects
+Instances:    500
+Attributes:   86
+              ReturnType
+              IsVoidCall
+              CallerLayer
+              CalleeLayer
+              LayerRelation
+              ArgCount
+              HasLiteralArg
+              HasNullArg
+              HasBooleanArg
+              HasNestedInvocationArg
+              AssignedToVariable
+              ReturnedDirectly
+              PassedAsArgument
+              InIfCondition
+              InsideIfBody
+              InsideLoop
+              ReceiverCategory
+              ReceiverOrigin
+              MethodName
+              NamePattern
+              NameStartsWithGet
+              NameStartsWithFind
+              NameStartsWithSave
+              NameStartsWithDelete
+              NameStartsWithUpdate
+              NameContainsValidate
+              NameContainsCheck
+              BooleanLikeCall
+              ArgumentTypePattern
+              CallerMethodFanOut
+              CallerClassFanOut
+              CalleeMethodFanIn
+              GuardedByIf
+              GuardedByNullCheck
+              GuardedByBooleanCheck
+              GuardedByInstanceofCheck
+              PrecededByGuardClause
+              ReceiverIsProjectType
+              ReceiverIsExternalType
+              ReceiverIsFieldDependency
+              NameStartsWithNotify
+              NameStartsWithPublish
+              NameStartsWithEmit
+              NameStartsWithDispatch
+              NameStartsWithFire
+              NameStartsWithSend
+              ReceiverLooksLikeObserverPublisher
+              ReceiverLooksLikeEventBus
+              ReceiverLooksLikeListenerRegistry
+              AnyArgumentLooksLikeEvent
+              AnyArgumentLooksLikeMessage
+              FollowsStateMutationNearby
+              CrossLayerCall
+              CallsDependencyField
+              InsideDelegationChain
+              HasChainedOrNestedDelegation
+              ReturnsBoolean
+              ReturnsCollection
+              ReturnsOptional
+              ReturnsProjectType
+              ReturnsExternalType
+              MethodLooksAccessor
+              MethodLooksMutator
+              CallerLooksControllerMethod
+              CalleeLooksQueryMethod
+              CalleeLooksCommandMethod
+              CalleeLooksValidatorMethod
+              PreviousStatementContainsMutation
+              InvocationResultUsedInComparison
+              InvocationResultUsedInNullCheck
+              InvocationFeedsAnotherCall
+              IsFactoryLikeCall
+              ReturnsNewProjectType
+              MethodNameStartsWithCreate
+              MethodNameStartsWithBuild
+              MethodNameStartsWithOf
+              MethodNameStartsWithFrom
+              ReceiverLooksLikeFactory
+              ResultUsageKind
+              CalleeNameAction
+              ComputeTransformNameHint
+              CalleeBodySummary
+              CalleeAnnotations
+              ReceiverFieldInjectedDependency
+              IsLoggingCall
+              ManualLabel
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+PART decision list
+------------------
+
+IsFactoryLikeCall = true AND
+MethodNameStartsWithBuild = false: Creational (33.0)
+
+NameStartsWithGet = true AND
+HasLiteralArg = false: Query/Retrieve (80.0/2.0)
+
+CalleeLooksCommandMethod = true AND
+NameStartsWithNotify = false AND
+InvocationFeedsAnotherCall = false: Command/Mutate (80.0/6.0)
+
+NameStartsWithSend = false AND
+CalleeNameAction = EXISTENCE_CHECK: Validate/Guard (37.0/1.0)
+
+NameStartsWithSend = false AND
+CalleeNameAction = VALIDATOR: Validate/Guard (28.0)
+
+NameStartsWithSend = false AND
+CalleeNameAction = MUTATOR AND
+CalleeLooksQueryMethod = true: Command/Mutate (16.0/1.0)
+
+NameStartsWithSend = true: Notify/Publish (16.0)
+
+CalleeNameAction = CONVERSION: Compute/Transform (12.0)
+
+CalleeNameAction = CREATION AND
+ReceiverCategory = static_type: Creational (11.0)
+
+CalleeBodySummary = UNRESOLVED AND
+NameStartsWithFind = true AND
+BooleanLikeCall = false: Query/Retrieve (13.0)
+
+CalleeBodySummary = CALLS_MUTATOR|RETURNS_VALUE|RETURNS_NEW_OBJECT: Compute/Transform (7.0/1.0)
+
+CalleeBodySummary = UNRESOLVED AND
+IsFactoryLikeCall = true AND
+AssignedToVariable = true: Compute/Transform (7.0/1.0)
+
+CalleeBodySummary = UNRESOLVED AND
+ReturnsExternalType = false AND
+InsideLoop = false AND
+MethodLooksMutator = false AND
+InsideIfBody = false AND
+ArgCount > 0 AND
+MethodName = mock: Control/Orchestrate (17.0)
+
+CalleeBodySummary = UNRESOLVED AND
+ReturnType = java.lang.String: Compute/Transform (17.0/2.0)
+
+CalleeBodySummary = NONE: Notify/Publish (6.0)
+
+CalleeBodySummary = RETURNS_VALUE: Query/Retrieve (4.0)
+
+CalleeBodySummary = CALLS_MUTATOR|RETURNS_VALUE: Command/Mutate (3.0)
+
+CalleeAnnotations = UNRESOLVED AND
+IsLoggingCall = false AND
+ReturnType = void AND
+MethodLooksMutator = false AND
+InsideIfBody = false AND
+ArgCount > 0 AND
+MethodName = andExpect: Validate/Guard (13.0)
+
+CalleeBodySummary = UNRESOLVED AND
+IsLoggingCall = true: Unknown/Mixed (3.0)
+
+CalleeAnnotations = UNRESOLVED AND
+ArgCount > 0 AND
+InIfCondition = false AND
+ReturnedDirectly = false AND
+PrecededByGuardClause = false AND
+InsideIfBody = false AND
+ReturnType = void AND
+PassedAsArgument = false: Control/Orchestrate (42.0)
+
+CalleeAnnotations = NONE AND
+PassedAsArgument = false AND
+ArgCount <= 1: Unknown/Mixed (2.0)
+
+CalleeAnnotations = NONE AND
+ArgCount <= 1: Query/Retrieve (2.0)
+
+CalleeAnnotations = UNRESOLVED AND
+ArgCount <= 1 AND
+ReturnType = void AND
+CalleeNameAction = OTHER AND
+InsideIfBody = false AND
+CallerLayer = other: Validate/Guard (11.0/1.0)
+
+BooleanLikeCall = false AND
+CalleeAnnotations = UNRESOLVED AND
+ArgCount <= 1 AND
+HasLiteralArg = false: Compute/Transform (21.0/8.0)
+
+BooleanLikeCall = false AND
+CallerMethodFanOut > 6: Control/Orchestrate (11.0/2.0)
+
+CalleeLayer = external: Validate/Guard (6.0)
+
+: Creational (2.0)
+
+Number of Rules  : 	27
+
+
+Time taken to build model: 0.07 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances         434               86.8    %
+Incorrectly Classified Instances        66               13.2    %
+Kappa statistic                          0.8427
+Mean absolute error                      0.04  
+Root mean squared error                  0.1681
+Relative absolute error                 19.025  %
+Root relative squared error             51.8586 %
+Total Number of Instances              500     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.886    0.023    0.912      0.886    0.899      0.872    0.948     0.861     Query/Retrieve
+                 0.874    0.037    0.847      0.874    0.860      0.827    0.928     0.770     Command/Mutate
+                 0.943    0.030    0.835      0.943    0.886      0.868    0.993     0.945     Control/Orchestrate
+                 0.698    0.051    0.617      0.698    0.655      0.613    0.863     0.619     Compute/Transform
+                 0.926    0.007    0.967      0.926    0.946      0.934    0.980     0.939     Validate/Guard
+                 0.880    0.000    1.000      0.880    0.936      0.935    0.948     0.893     Notify/Publish
+                 0.820    0.007    0.932      0.820    0.872      0.861    0.928     0.864     Creational
+                 0.571    0.000    1.000      0.571    0.727      0.754    0.906     0.731     Unknown/Mixed
+Weighted Avg.    0.868    0.024    0.876      0.868    0.870      0.848    0.945     0.845     
+
+=== Confusion Matrix ===
+
+  a  b  c  d  e  f  g  h   <-- classified as
+ 93  1  1  8  2  0  0  0 |  a = Query/Retrieve
+  5 83  3  4  0  0  0  0 |  b = Command/Mutate
+  1  0 66  3  0  0  0  0 |  c = Control/Orchestrate
+  1  6  6 37  0  0  3  0 |  d = Compute/Transform
+  1  2  2  2 88  0  0  0 |  e = Validate/Guard
+  0  2  0  0  1 22  0  0 |  f = Notify/Publish
+  0  3  1  5  0  0 41  0 |  g = Creational
+  1  1  0  1  0  0  0  4 |  h = Unknown/Mixed
+
